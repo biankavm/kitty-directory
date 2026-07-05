@@ -1,16 +1,16 @@
-# Doggy Directory
+# Kitty Directory 🐱
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Cool-Runningz/doggy-directory">
+  <a href="https://github.com/biankavm/kitty-directory">
     <img src="public/logo192.png" alt="Logo" width="80" height="80">
   </a>
 
   <p align="center">
-  <strong>This is a sample app for the DigitalOcean article: "How to Test a React App with Jest and React Testing Library"</strong>
+  <strong>App de exemplo para explorar testes em React com Jest e React Testing Library. Lista raças de gatos e exibe imagens usando a <a href="https://thecatapi.com/">TheCatAPI</a>.</strong>
     <br />
     <br />
-    <a href="https://doggy-directory-app-6bm2f.ondigitalocean.app/">View Demo 🏗️</a>
+    <em>Adaptado do <a href="https://github.com/Cool-Runningz/doggy-directory">Doggy Directory</a> (originalmente com a dog.ceo API).</em>
   </p>
 </p>
 
