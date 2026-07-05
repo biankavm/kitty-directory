@@ -5,7 +5,7 @@ function App() {
   const [breeds, setBreeds] = useState([])
   const [selectedBreed, setSelectedBreed] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [dogImages, setDogImages] = useState([])
+  const [catImages, setCatImages] = useState([])
 
   useEffect(() => {
     fetch('https://api.thecatapi.com/v1/breeds')
@@ -36,12 +36,12 @@ function App() {
       })
       .then((json) => {
         setIsLoading(false)
-        setDogImages(json.map((image) => image.url))
+        setCatImages(json.map((image) => image.url))
       })
   }
 
   const selectedBreedName =
-    breeds.find((breed) => breed.id === selectedBreed)?.name || selectedBreed;
+    breeds.find((breed) => breed.id === selectedBreed)?.name || selectedBreed
 
   return (
     <div className='d-flex justify-content-center flex-column text-center'>
@@ -74,13 +74,13 @@ function App() {
             Search
           </button>
         </div>
-        {dogImages.length > 0 && !isLoading && (
+        {catImages.length > 0 && !isLoading && (
           <div className='px-5 mx-5 text-end' data-testid='results-count'>
-            <p className='fs-5'>{dogImages.length} results</p>
+            <p className='fs-5'>{catImages.length} results</p>
           </div>
         )}
         <div className='mt-5 d-flex justify-content-center flex-wrap px-5 mx-5'>
-          {dogImages.length === 0 && !isLoading && (
+          {catImages.length === 0 && !isLoading && (
             <img
               src={placeholderImg}
               className='mx-auto d-block mt-4 w-50'
@@ -97,14 +97,14 @@ function App() {
               ></div>
             </div>
           )}
-          {dogImages.length > 0 &&
+          {catImages.length > 0 &&
             !isLoading &&
-            dogImages.map((imgSrc, index) => (
+            catImages.map((imgSrc, index) => (
               <img
                 key={`${index}-${selectedBreed}`}
                 src={imgSrc}
                 className='img-thumbnail w-25'
-                alt={`${selectedBreedName} ${index + 1} of ${dogImages.length}`}
+                alt={`${selectedBreedName} ${index + 1} of ${catImages.length}`}
               />
             ))}
         </div>
