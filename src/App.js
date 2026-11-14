@@ -29,6 +29,11 @@ function App() {
     setIsLoading(true)
     fetch(
       `https://api.thecatapi.com/v1/images/search?breed_ids=${selectedBreed}&limit=20`,
+      {
+        headers: {
+          'x-api-key': process.env.REACT_APP_CAT_API_KEY,
+        },
+      },
     )
       .then((response) => {
         if (response.status === 200 || response.ok) {
