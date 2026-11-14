@@ -8,7 +8,11 @@ function App() {
   const [catImages, setCatImages] = useState([])
 
   useEffect(() => {
-    fetch('https://api.thecatapi.com/v1/breeds')
+    fetch('https://api.thecatapi.com/v1/breeds', {
+      headers: {
+        'x-api-key': process.env.REACT_APP_CAT_API_KEY,
+      },
+    })
       .then((response) => {
         if (response.status === 200 || response.ok) {
           return response.json()
@@ -24,7 +28,7 @@ function App() {
   const searchByBreed = () => {
     setIsLoading(true)
     fetch(
-      `https://api.thecatapi.com/v1/images/search?breed_ids=${selectedBreed}&limit=20`
+      `https://api.thecatapi.com/v1/images/search?breed_ids=${selectedBreed}&limit=20`,
     )
       .then((response) => {
         if (response.status === 200 || response.ok) {
